@@ -33,7 +33,11 @@ class Chart(wx.Frame):
      
         try:
             data_path = os.path.join(os.path.dirname(__file__), DATA_FILE)
-            data = pd.read_csv(data_path, sep=';', quotechar='"')
+            data = pd.read_csv(
+            data_path,
+            sep=';',
+            quotechar='"',
+            usecols=[FEATURE_X, FEATURE_Y])
 
             if FEATURE_X not in data.columns or FEATURE_Y not in data.columns:
                 raise ValueError(
