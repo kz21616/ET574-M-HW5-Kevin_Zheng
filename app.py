@@ -35,7 +35,7 @@ class Chart(wx.Frame):
             wildcard="CSV Files(*.csv|*.csv",
             style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
         ) as dlg:
-            if dlg.ShowModal() != wx.ID_ok:
+            if dlg.ShowModal() != wx.ID_OK:
                 return
             path = dlg.GetPath()
 
@@ -60,6 +60,6 @@ class Chart(wx.Frame):
 
 
 if __name__ == "__main__":
-    app = wx.APP(False)
+    app = wx.App(False)
     Chart()
     app.MainLoop()
